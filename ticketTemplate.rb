@@ -6,6 +6,12 @@ require 'yaml'
 
 module TicketTemplate
 
+	# Add an instance variable to hold users current location
+	@currDir = ""
+	
+	# Add a hash tosave some specail locationss:
+	dirHash = {home => '', up_level = '..'}
+	
 	# Use to check the user's entries into the program for validity:
 	class EntryValidator
 
@@ -120,7 +126,7 @@ module TicketTemplate
 		end
 	end
 
-	class TicketTemplateExtract
+	class Extract
 
 		@@connections = {}
 
@@ -163,7 +169,7 @@ module TicketTemplate
 	end
 	
 	# Create a class to generate various portions of a ticket 
-	class TicketTemplate_Generate
+	class Generate
 
 		def initialize()
 			
